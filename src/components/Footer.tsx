@@ -10,12 +10,13 @@ const Footer = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1.1fr] gap-12 md:gap-20">
                     {/* Brand */}
                     <div className="flex flex-col gap-5">
-                        <a href="/" className="inline-block transition-transform hover:scale-105">
+                        <a href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
                             <img
                                 src="/logo.png"
                                 alt="Noweb Labs"
-                                className="w-[140px] h-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.35)]"
+                                className="w-10 h-auto"
                             />
+                            <span className="text-white font-[1000] text-xl tracking-tight">noweb.cl</span>
                         </a>
                         <p className="m-0 text-white/70 text-[13px] leading-[1.65] font-[650] max-w-[420px]">
                             Líderes en diseño web en Puerto Montt y Puerto Varas. Apoyando a emprendedores y Pymes de todo el sur de Chile con tecnología de alto rendimiento y SEO Local.
