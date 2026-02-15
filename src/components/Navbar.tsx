@@ -26,15 +26,15 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
-                    ? 'py-3 bg-[#05050b]/80 backdrop-blur-xl border-b border-white/10'
-                    : 'py-6 bg-transparent'
+                ? 'py-3 bg-[#05050b]/80 backdrop-blur-xl border-b border-white/10'
+                : 'py-6 bg-transparent'
                 }`}
         >
             <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <a href="/" className="relative z-10 block group">
                     <img
-                        src="https://noweb.cl/wp-content/uploads/2025/08/Paginas-web-en-Puerto-Montt.webp"
+                        src="/logo.png"
                         alt="Noweb Labs"
                         className="h-9 w-auto object-contain drop-shadow-[0_14px_30px_rgba(0,0,0,0.35)] transition-transform group-hover:scale-105"
                     />

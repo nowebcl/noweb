@@ -12,8 +12,8 @@ const Footer = () => {
                     <div className="flex flex-col gap-5">
                         <a href="/" className="inline-block transition-transform hover:scale-105">
                             <img
-                                src="https://noweb.cl/wp-content/uploads/2025/08/Paginas-web-en-Puerto-Montt.webp"
-                                alt="Noweb"
+                                src="/logo.png"
+                                alt="Noweb Labs"
                                 className="w-[140px] h-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.35)]"
                             />
                         </a>
