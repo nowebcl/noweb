@@ -9,7 +9,8 @@ const technicalServices = [
         description: 'Mantenemos tu sitio seguro, actualizado y funcionando sin errores. Monitoreo 24/7 y respaldos periódicos.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-5.11l2.454-2.454a2.652 2.652 0 1 0-3.75-3.75l-2.454 2.454m-3.13 3.13L6.347 11.3M6.347 11.3l-2.454 2.454a2.652 2.652 0 1 0 3.75 3.75l2.454-2.454m-3.13-3.13 4.305-4.306" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M8.5 12h2.5l1-2.5 1 5 1-2.5h2.5" />
             </svg>
         )
     },
