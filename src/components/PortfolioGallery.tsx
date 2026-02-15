@@ -4,21 +4,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const items = [
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-12.webp", alt: "Trabajo Noweb 1" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-13.webp", alt: "Trabajo Noweb 2" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-14.webp", alt: "Trabajo Noweb 3" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-15.webp", alt: "Trabajo Noweb 4" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-16.webp", alt: "Trabajo Noweb 5" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-17.webp", alt: "Trabajo Noweb 6" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-5.webp", alt: "Trabajo Noweb 7" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-6.webp", alt: "Trabajo Noweb 8" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-7.webp", alt: "Trabajo Noweb 9" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-8.webp", alt: "Trabajo Noweb 10" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-9.webp", alt: "Trabajo Noweb 11" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-10.webp", alt: "Trabajo Noweb 12" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/Recurso-11.webp", alt: "Trabajo Noweb 13" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/WEB-PAGINAS.webp", alt: "Trabajo Noweb 14" },
-    { src: "https://noweb.cl/wp-content/uploads/2025/10/WEB-PAG.webp", alt: "Trabajo Noweb 15" }
+    { src: "/portfolio/Recurso-12.webp", alt: "Trabajo Noweb 1" },
+    { src: "/portfolio/Recurso-13.webp", alt: "Trabajo Noweb 2" },
+    { src: "/portfolio/Recurso-14.webp", alt: "Trabajo Noweb 3" },
+    { src: "/portfolio/Recurso-15.webp", alt: "Trabajo Noweb 4" },
+    { src: "/portfolio/Recurso-16.webp", alt: "Trabajo Noweb 5" },
+    { src: "/portfolio/Recurso-17.webp", alt: "Trabajo Noweb 6" },
+    { src: "/portfolio/Recurso-5.webp", alt: "Trabajo Noweb 7" },
+    { src: "/portfolio/Recurso-6.webp", alt: "Trabajo Noweb 8" },
+    { src: "/portfolio/Recurso-7.webp", alt: "Trabajo Noweb 9" },
+    { src: "/portfolio/Recurso-8.webp", alt: "Trabajo Noweb 10" },
+    { src: "/portfolio/Recurso-9.webp", alt: "Trabajo Noweb 11" },
+    { src: "/portfolio/Recurso-10.webp", alt: "Trabajo Noweb 12" },
+    { src: "/portfolio/Recurso-11.webp", alt: "Trabajo Noweb 13" },
+    { src: "/portfolio/WEB-PAGINAS.webp", alt: "Trabajo Noweb 14" },
+    { src: "/portfolio/WEB-PAG.webp", alt: "Trabajo Noweb 15" }
 ];
 
 const splitAt = Math.ceil(items.length / 2);

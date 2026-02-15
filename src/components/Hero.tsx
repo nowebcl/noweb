@@ -13,9 +13,9 @@ const Hero = () => {
                 loop
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover scale-[1.02] -z-[3] saturate-[1.05] contrast-[1.05]"
-                poster="https://noweb.cl/wp-content/uploads/2025/12/GettyImages-1251718021.webm"
+                poster="/hero-bg.webm"
             >
-                <source src="https://noweb.cl/wp-content/uploads/2025/12/GettyImages-1251718021.webm" type="video/webm" />
+                <source src="/hero-bg.webm" type="video/webm" />
             </video>
 
             {/* Overlays */}
