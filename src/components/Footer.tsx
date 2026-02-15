@@ -18,7 +18,7 @@ const Footer = () => {
                             />
                         </a>
                         <p className="m-0 text-white/70 text-[13px] leading-[1.65] font-[650] max-w-[420px]">
-                            Diseño web profesional en Puerto Montt. Creamos páginas que convierten visitantes en clientes de alto valor. Expertos en performance y SEO técnico.
+                            Líderes en diseño web en Puerto Montt y Puerto Varas. Apoyando a emprendedores y Pymes de todo el sur de Chile con tecnología de alto rendimiento y SEO Local.
                         </p>
                     </div>
 

@@ -57,8 +57,8 @@ const WorkProcess = () => {
         <section id="nosotros" className="py-16 bg-background">
             <div className="max-w-[1200px] mx-auto px-4">
                 <div className="text-center mb-10">
-                    <h2 className="m-0 text-4xl font-[1000] tracking-[-1px]">Cómo trabajamos</h2>
-                    <p className="mt-2.5 text-muted font-[700] text-sm md:text-base">Un proceso simple y transparente para comenzar tu servicio</p>
+                    <h2 className="m-0 text-4xl font-[1000] tracking-[-1px]">Creamos Tu Presencia Digital en Puerto Montt</h2>
+                    <p className="mt-2.5 text-muted font-[700] text-sm md:text-base">Un proceso diseñado para potenciar Pymes y emprendedores de la Región de Los Lagos.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-x-12 mt-12 overflow-visible">

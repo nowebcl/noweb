@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import WorkProcess from "@/components/WorkProcess";
+import TechnicalSection from "@/components/TechnicalSection";
 import PricingTable from "@/components/PricingTable";
 import ReviewsScroll from "@/components/ReviewsScroll";
 import FAQs from "@/components/FAQs";
@@ -16,6 +17,7 @@ export default function Home() {
         {/* Main Sections */}
         <PortfolioGallery />
         <WorkProcess />
+        <TechnicalSection />
         <PricingTable />
         <CustomQuote />
         <ReviewsScroll />

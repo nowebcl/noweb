@@ -38,8 +38,9 @@ const Hero = () => {
                     transition={{ delay: 0.1 }}
                     className="text-[clamp(34px,4.8vw,64px)] font-[1000] leading-[1.02] tracking-[-1px] m-0"
                 >
-                    Tu página web profesional<br />
-                    en <span className="nw-grad drop-shadow-[0_10px_30px_rgba(255,61,154,0.10)]">Puerto Montt</span>
+                    Ahora en Puerto Montt: <br />
+                    <span className="nw-grad drop-shadow-[0_10px_30px_rgba(255,61,154,0.10)]">Diseño Web y Páginas</span><br />
+                    de Alto Rendimiento
                 </motion.h1>
 
                 <motion.p
@@ -48,8 +49,8 @@ const Hero = () => {
                     transition={{ delay: 0.2 }}
                     className="m-0 max-w-[70ch] text-muted text-base leading-[1.6] md:text-lg"
                 >
-                    Diseñamos sitios web que convierten visitantes en clientes.<br />
-                    Autoadministrables, sin mensualidad y con entrega en tiempo récord.
+                    Como agencia digital líder en Puerto Montt, creamos sitios web y e-commerce que convierten.<br />
+                    Optimización SEO local, autoadministrables y diseñados para Pymes de la Región de Los Lagos.
                 </motion.p>
 
                 <motion.div

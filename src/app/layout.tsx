@@ -17,23 +17,26 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.noweb.cl"),
-  title: {
-    default: "Diseño de Páginas Web en Puerto Montt | Noweb Labs",
-    template: "%s | Noweb Labs",
-  },
+  title: "Noweb Labs | Diseño y Páginas Web Puerto Montt | SEO y E-commerce",
+  description: "Tu agencia de desarrollo web en Puerto Montt. Creamos páginas, e-commerce y soluciones SEO de alto rendimiento para Pymes en la Región de Los Lagos.",
+  keywords: [
+    "Diseño web Puerto Montt",
+    "Páginas web Puerto Montt",
+    "Desarrollo web Puerto Montt",
+    "Agencia digital Puerto Montt",
+    "SEO Puerto Montt",
+    "Marketing digital Puerto Montt",
+    "Creación tiendas online",
+    "E-commerce Puerto Montt",
+    "Mantenimiento web",
+    "Puerto Varas",
+    "Región de Los Lagos",
+    "Pymes Chile",
+  ],
   icons: {
     icon: "/icon.webp",
     apple: "/apple-icon.webp",
   },
-  description: "Expertos en Diseño Web y SEO Local en Puerto Montt. Creamos sitios web de alta conversión para empresas de la Región de Los Lagos. ¡Cotiza tu proyecto hoy!",
-  keywords: [
-    "Páginas Web Puerto Montt",
-    "Diseño Web Puerto Montt",
-    "SEO Local Chile",
-    "Desarrollo Web Región de Los Lagos",
-    "E-commerce Puerto Montt",
-    "Noweb Labs",
-  ],
   authors: [{ name: "Noweb Labs" }],
   creator: "Noweb Labs",
   publisher: "Noweb Labs",
@@ -60,8 +63,8 @@ export const metadata: Metadata = {
     google: "YRSyqkg95tHwAWE3vdOjq8OJUUavzL9NgGenhUTlI8c",
   },
   openGraph: {
-    title: "Diseño de Páginas Web en Puerto Montt | Noweb Labs",
-    description: "Impulsa tu negocio con una web profesional. Líderes en desarrollo web y SEO en el sur de Chile.",
+    title: "Noweb Labs | Diseño y Páginas Web Puerto Montt | SEO y E-commerce",
+    description: "Tu agencia de desarrollo web en Puerto Montt. Creamos páginas web, e-commerce y soluciones SEO de alto rendimiento para Pymes de la Región de Los Lagos.",
     url: "https://www.noweb.cl",
     siteName: "Noweb Labs",
     locale: "es_CL",
@@ -77,8 +80,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noweb Labs | Diseño Web en Puerto Montt",
-    description: "Tu socio tecnológico para el crecimiento digital en la Región de Los Lagos.",
+    title: "Noweb Labs | Diseño y Páginas Web Puerto Montt",
+    description: "Expertos en desarrollo web y SEO local en Puerto Montt y la Región de Los Lagos.",
     images: ["/og-image.jpg"],
   },
 };
@@ -96,9 +99,10 @@ export default function RootLayout({
     "@id": "https://www.noweb.cl",
     "url": "https://www.noweb.cl",
     "telephone": "+56987843957",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Av. Austral 1795",
+      "streetAddress": "Av. Austral 1795 (Kingdom Coffee)",
       "addressLocality": "Puerto Montt",
       "addressRegion": "Región de Los Lagos",
       "postalCode": "5480000",
@@ -109,6 +113,11 @@ export default function RootLayout({
       "latitude": -41.4689,
       "longitude": -72.9411
     },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Puerto Montt" },
+      { "@type": "AdministrativeArea", "name": "Puerto Varas" },
+      { "@type": "AdministrativeArea", "name": "Región de Los Lagos" }
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
@@ -123,8 +132,7 @@ export default function RootLayout({
     },
     "sameAs": [
       "https://www.instagram.com/noweb.labs/"
-    ],
-    "priceRange": "$$"
+    ]
   };
 
   return (
