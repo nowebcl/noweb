@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     default: "Diseño de Páginas Web en Puerto Montt | Noweb Labs",
     template: "%s | Noweb Labs",
   },
+  icons: {
+    icon: "/icon.webp",
+    apple: "/apple-icon.webp",
+  },
   description: "Expertos en Diseño Web y SEO Local en Puerto Montt. Creamos sitios web de alta conversión para empresas de la Región de Los Lagos. ¡Cotiza tu proyecto hoy!",
   keywords: [
     "Páginas Web Puerto Montt",
