@@ -2,24 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import AuroraBackground from './AuroraBackground';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[620px] flex items-center justify-center text-center px-4 pt-32 pb-20 overflow-hidden rounded-[18px] mx-4 my-4 shadow-[0_18px_60px_rgba(0,0,0,0.45)] isolate bg-[#05050b]">
-            {/* Video Background */}
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-[1.02] -z-[3] saturate-[1.05] contrast-[1.05]"
-                poster="/hero-bg.webm"
-            >
-                <source src="/hero-bg.webm" type="video/webm" />
-            </video>
+        <section className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden rounded-[18px] mx-4 my-4 shadow-[0_18px_60px_rgba(0,0,0,0.45)] isolate bg-[#05050b]">
+            {/* Aurora Background */}
+            <AuroraBackground />
 
             {/* Overlays */}
-            <div className="absolute inset-0 -z-[2] bg-[radial-gradient(900px_520px_at_50%_10%,rgba(123,44,255,0.35),transparent_55%),radial-gradient(900px_520px_at_70%_20%,rgba(255,61,154,0.22),transparent_60%),linear-gradient(180deg,rgba(5,5,11,0.78),rgba(5,5,11,0.92))]"></div>
             <div className="absolute inset-0 -z-[1] opacity-[0.22] nw-grid-pattern [mask-image:radial-gradient(circle_at_50%_20%,rgba(0,0,0,1),rgba(0,0,0,0.25)_55%,rgba(0,0,0,0)_80%)]"></div>
 
             <div className="max-w-[980px] flex flex-col items-center gap-[14px] relative z-10">
