@@ -12,7 +12,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-5">
                         <a href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
                             <img
-                                src="/logo.png"
+                                src="/brand-logo.png"
                                 alt="Noweb Labs"
                                 className="w-10 h-auto"
                             />

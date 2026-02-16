@@ -34,7 +34,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <a href="/" className="relative z-10 flex items-center gap-3 block group">
                     <img
-                        src="/logo.png"
+                        src="/brand-logo.png"
                         alt="Noweb Labs"
                         className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
                     />
