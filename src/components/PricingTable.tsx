@@ -5,116 +5,78 @@ import { motion } from 'framer-motion';
 
 const designPlans = [
     {
-        title: "Fastpage (1 solo pago)",
+        title: "Fast Page",
         subtitle: "Presencia profesional en tiempo récord.",
-        price: "149.890",
+        price: "249.980",
         features: [
             "Dominio + hosting incluidos",
             "Información de tu empresa + botones",
             "Conexión directa a WhatsApp y redes sociales",
             "Contenido con IA + rapidez",
             "Correos corporativos personalizados",
-            "Entrega: 2 días hábiles + editor Elementor Pro"
+            "Entrega: 2 días hábiles + editor Elementor Pro",
+            "1 reunión Meet (opcional)"
         ]
     },
     {
-        title: "Landing focus +",
-        subtitle: "Enfocada en conversión + 1 anuncio conectado.",
-        price: "199.980",
+        title: "Plan PRO Corporativo",
+        subtitle: "Ideal para Inmobiliarias, automotoras, diarios, proyectos grandes",
+        price: "449.980",
         featured: true,
         features: [
-            "Todo lo de Fastpage + foco total en conversión (copy + estructura)",
-            "CTA estratégicos + WhatsApp + redes sociales",
-            "Configuración de 1 anuncio conectado a la landing",
-            "Contenido con IA optimizado para captar leads",
+            "Diseño profesional + responsive",
+            "Gestión de stock (Vehículos o Propiedades)",
+            "Plugin especializado desarrollado por noweb",
+            "Subir items ilimitados",
+            "Conexión WhatsApp + formularios pro",
             "Correos corporativos personalizados",
-            "Entrega rápida + editor Elementor Pro"
-        ]
-    },
-    {
-        title: "Sitio web para inmobiliarias.",
-        subtitle: "Sitio orientado a captación de leads y contacto rápido.",
-        price: "249.980",
-        features: [
-            "Diseño profesional + responsive",
-            "Secciones clave para propiedades + contacto",
-            "Plugin desarrollado por noweb",
-            "Subir propiedades ilimitadas",
-            "Conexión WhatsApp + formularios",
-            "Correos corporativos personalizados"
-        ]
-    },
-    {
-        title: "Sitio web para automotoras.",
-        subtitle: "Catálogo digital de vehículos con filtros y contacto directo.",
-        price: "249.980",
-        features: [
-            "Diseño profesional + responsive",
-            "Gestión de stock de vehículos + fichas técnicas",
-            "Plugin desarrollado por noweb",
-            "Subir vehículos ilimitados",
-            "Conexión WhatsApp + formularios",
-            "Correos corporativos personalizados"
+            "Reunión Presencial/meet"
         ]
     }
 ];
 
 const ecommercePlans = [
     {
-        title: "Mini ecommerce",
-        subtitle: "Tienda tipo Shopify para emprendedores que recién comienzan.",
-        price: "199.980",
-        features: [
-            "Tienda tipo Shopify (1 pago, sin comisiones mensuales)",
-            "Webpay / MercadoPago / PayPal",
-            "Catálogo de hasta 30 productos",
-            "Correos corporativos personalizados"
-        ]
-    },
-    {
         title: "E-commerce FULL.",
         subtitle: "Todas las características de Shopify, pero con un solo pago.",
-        price: "349.980",
+        price: "549.980",
         featured: true,
         features: [
             "Sitio premium con carga de +1000 productos",
             "Webpay / MercadoPago / PayPal",
             "Panel admin + gestión de inventario/catálogo",
-            "Correos corporativos personalizados"
+            "Correos corporativos personalizados",
+            "Reunión Presencial/meet"
         ]
     }
 ];
 
 const aiPlans = [
     {
-        title: "Automatización IA Básica",
-        subtitle: "Atiende, responde y capta leads automáticamente.",
-        price: "399.990",
-        features: [
-            "Chatbots para WhatsApp + FAQ",
-            "Captura de leads + derivación",
-            "Entrenamiento con tu información"
-        ]
-    },
-    {
-        title: "Automatización IA intermedia",
-        subtitle: "Flujos de trabajo con agentes autónomos conectados con APIs.",
-        price: "779.980",
+        title: "Desarrollo de alto nivel",
+        subtitle: "Sistemas web escalables diseñados para tus necesidades.",
+        price: "1.399.980",
+        from: true,
         featured: true,
         features: [
-            "Agentes autónomos para flujos de trabajo",
-            "Integración con APIs (según tus herramientas)",
-            "Diseño, pruebas y puesta en marcha"
+            "Desarrollo full-stack personalizado",
+            "Panel de administración a medida",
+            "Arquitectura escalable y segura",
+            "Integración de APIs y bases de datos",
+            "Reuniones necesarias"
         ]
     },
     {
-        title: "Automatización IA avanzada",
-        subtitle: "Funnel con varios agentes o agente tipo community manager.",
-        price: "1.590.000",
+        title: "Desarrollo de Apps Móviles",
+        subtitle: "Aplicaciones móviles nativas o híbridas para tu empresa.",
+        price: "2.699.980",
+        from: true,
         features: [
-            "Funnel de ventas completo con agentes",
-            "Agente tipo community manager (respuestas + agenda)",
-            "Medición, optimización y escalamiento"
+            "Desarrollo para iOS y Android",
+            "UX/UI premium de alto impacto",
+            "Funciones nativas y notificaciones push",
+            "Soporte y mantenimiento post-lanzamiento",
+            "Reuniones necesarias"
         ]
     }
 ];
@@ -145,12 +107,15 @@ const PricingCard = ({ plan }: { plan: any }) => (
         <h3 className="text-center text-xl font-[950] tracking-tight pt-2 m-0">{plan.title}</h3>
         <p className="text-center text-muted text-[13px] leading-[1.45] min-h-[38px] mt-2 m-0">{plan.subtitle}</p>
 
-        <div className="mt-4 flex items-baseline justify-center gap-2 leading-none">
+        <div className="mt-4 flex items-baseline justify-center gap-1 leading-none">
+            {plan.from && <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>}
             <span className="text-sm font-[900] text-white/50 -translate-y-[2px]">$</span>
             <span className="text-[44px] font-[1000] tracking-[-1px] text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent drop-shadow-[0_14px_28px_rgba(0,0,0,0.25)]">{plan.price}</span>
             <span className="text-[12px] font-[900] text-white/50 tracking-widest -translate-y-[2px]">CLP</span>
         </div>
-        <div className="mt-2 text-center text-[12px] font-[800] text-white/60 uppercase tracking-wider">Pago único</div>
+        <div className="mt-2 text-center text-[12px] font-[800] text-white/60 uppercase tracking-wider">
+            IVA INC
+        </div>
 
         <ul className="flex-grow mt-[18px] flex flex-col gap-[11px] list-none p-0">
             {plan.features.map((feature: string, idx: number) => (
@@ -199,17 +164,17 @@ const PricingTable = () => {
                         Ecommerce
                     </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px] mb-12 max-w-[800px] mx-auto">
+                <div className="grid grid-cols-1 gap-[18px] mb-12 max-w-[420px] mx-auto">
                     {ecommercePlans.map((plan, idx) => <PricingCard key={idx} plan={plan} />)}
                 </div>
 
-                {/* Automatizaciones */}
+                {/* Software Web a Medida */}
                 <div className="flex justify-center mb-4">
                     <span className="px-3.5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white/80 font-black text-[11px] uppercase tracking-widest">
-                        Automatizaciones
+                        Software Web a medida
                     </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px] max-w-[800px] mx-auto">
                     {aiPlans.map((plan, idx) => <PricingCard key={idx} plan={plan} />)}
                 </div>
             </div>

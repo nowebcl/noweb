@@ -68,7 +68,7 @@ const Footer = () => {
                                 hola@noweb.cl
                             </a>
 
-                            <a href="https://www.instagram.com/noweb.labs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3.5 text-white/72 text-[13px] font-[650] hover:text-white transition-colors group">
+                            <a href="https://www.instagram.com/noweb.dev/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3.5 text-white/72 text-[13px] font-[650] hover:text-white transition-colors group">
                                 <div className="w-5 h-5 text-primary shrink-0 group-hover:scale-110 transition-transform">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -76,7 +76,7 @@ const Footer = () => {
                                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                                     </svg>
                                 </div>
-                                Instagram: @noweb.labs
+                                Instagram: @noweb.dev
                             </a>
                         </div>
                     </div>

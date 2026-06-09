@@ -5,7 +5,7 @@ import React from 'react';
 const faqs = [
     {
         q: "¿Cuánto tiempo demora crear mi página web?",
-        a: "El tiempo mínimo de entrega es de <b>2 días hábiles</b> en los planes <b>Fastpage</b> y <b>Landing Focus</b>. En proyectos más grandes o a medida, los tiempos pueden variar según alcance y contenido."
+        a: "El tiempo mínimo de entrega es de <b>2 días hábiles</b> en el plan <b>Fastpage</b>. En proyectos más grandes o a medida, los tiempos pueden variar según alcance y contenido."
     },
     {
         q: "¿Tengo que pagar mensualidad?",

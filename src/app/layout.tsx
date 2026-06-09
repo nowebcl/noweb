@@ -131,7 +131,7 @@ export default function RootLayout({
       "closes": "18:00"
     },
     "sameAs": [
-      "https://www.instagram.com/noweb.labs/"
+      "https://www.instagram.com/noweb.dev/"
     ]
   };
 
