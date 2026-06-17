@@ -5,6 +5,21 @@ import { motion } from 'framer-motion';
 
 const designPlans = [
     {
+        title: "IA Express",
+        badge: "Cupos limitados",
+        subtitle: "Página web instantánea con inteligencia artificial.",
+        price: "63.008",
+        features: [
+            "Página web instantánea con IA",
+            "Dominio .cl incluido",
+            "Página personalizada a gusto del cliente",
+            "Ultra rápida",
+            { text: "Administrable", excluded: true },
+            { text: "Correos corporativos personalizados", excluded: true },
+            { text: "Cambios", excluded: true }
+        ]
+    },
+    {
         title: "Fast Page",
         subtitle: "Presencia profesional en tiempo récord.",
         price: "210.067",
@@ -100,6 +115,13 @@ const checkSvg = (
     </svg>
 );
 
+const crossSvg = (
+    <svg className="w-[18px] h-[18px] text-white/30 shrink-0 mt-[1px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+);
+
 const PricingCard = ({ plan }: { plan: any }) => (
     <motion.article
         whileHover={{ y: -5 }}
@@ -111,11 +133,15 @@ const PricingCard = ({ plan }: { plan: any }) => (
         {/* Glow */}
         <div className="absolute inset-x-[-140px] -top-[140px] h-[320px] bg-[radial-gradient(circle_at_35%_25%,rgba(123,44,255,0.22),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,61,154,0.16),transparent_60%),radial-gradient(circle_at_55%_55%,rgba(0,212,255,0.1),transparent_70%)] blur-[10px] opacity-[0.9] -z-[1]"></div>
 
-        {plan.featured && (
+        {plan.badge ? (
+            <div className="absolute -top-1 px-4 py-1.5 bg-[#ff3d9a] text-white text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20 shadow-[0_4px_12px_rgba(255,61,154,0.3)]">
+                {plan.badge}
+            </div>
+        ) : plan.featured ? (
             <div className="absolute -top-1 px-4 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20">
                 Popular
             </div>
-        )}
+        ) : null}
 
         <h3 className="text-center text-xl font-[950] tracking-tight pt-2 m-0">{plan.title}</h3>
         <p className="text-center text-muted text-[13px] leading-[1.45] min-h-[38px] mt-2 m-0">{plan.subtitle}</p>
@@ -131,12 +157,16 @@ const PricingCard = ({ plan }: { plan: any }) => (
         </div>
 
         <ul className="flex-grow mt-[18px] flex flex-col gap-[11px] list-none p-0">
-            {plan.features.map((feature: string, idx: number) => (
-                <li key={idx} className="flex gap-2.5 items-start text-[13px] font-[650] text-white/75 leading-[1.45]">
-                    {checkSvg}
-                    {feature}
-                </li>
-            ))}
+            {plan.features.map((feat: any, idx: number) => {
+                const isExcluded = typeof feat === 'object' && feat.excluded;
+                const text = typeof feat === 'object' ? feat.text : feat;
+                return (
+                    <li key={idx} className={`flex gap-2.5 items-start text-[13px] font-[650] leading-[1.45] ${isExcluded ? "text-white/35" : "text-white/75"}`}>
+                        {isExcluded ? crossSvg : checkSvg}
+                        {text}
+                    </li>
+                );
+            })}
         </ul>
 
         <a
@@ -167,7 +197,7 @@ const PricingTable = () => {
                         Diseño Web
                     </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[18px] mb-12 max-w-[900px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px] mb-12 max-w-[1200px] mx-auto">
                     {designPlans.map((plan, idx) => <PricingCard key={idx} plan={plan} />)}
                 </div>
 
