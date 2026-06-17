@@ -21,7 +21,7 @@ const designPlans = [
     {
         title: "Plan PRO Corporativo",
         subtitle: "Ideal para Inmobiliarias, automotoras, diarios, proyectos grandes",
-        price: "335.277",
+        price: "310.067",
         featured: true,
         features: [
             "Diseño profesional + responsive",
