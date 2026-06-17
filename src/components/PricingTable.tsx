@@ -7,7 +7,7 @@ const designPlans = [
     {
         title: "Fast Page",
         subtitle: "Presencia profesional en tiempo récord.",
-        price: "249.980",
+        price: "210.067",
         features: [
             "Dominio + hosting incluidos",
             "Información de tu empresa + botones",
@@ -21,7 +21,7 @@ const designPlans = [
     {
         title: "Plan PRO Corporativo",
         subtitle: "Ideal para Inmobiliarias, automotoras, diarios, proyectos grandes",
-        price: "449.980",
+        price: "378.134",
         featured: true,
         features: [
             "Diseño profesional + responsive",
@@ -37,9 +37,22 @@ const designPlans = [
 
 const ecommercePlans = [
     {
+        title: "Fast Shop",
+        subtitle: "Tienda online rápida, accesible para pymes y tiendas de Instagram.",
+        price: "259.990",
+        features: [
+            "Tienda online súper rápida",
+            "Disponible online 24/7",
+            "Productos ilimitados (subimos 5 de muestra)",
+            "Plan accesible para PYMEs y tiendas de Instagram",
+            "Correos corporativos personalizados",
+            "Reunión Presencial/meet"
+        ]
+    },
+    {
         title: "E-commerce FULL.",
         subtitle: "Todas las características de Shopify, pero con un solo pago.",
-        price: "549.980",
+        price: "462.168",
         featured: true,
         features: [
             "Sitio premium con carga de +1000 productos",
@@ -55,7 +68,7 @@ const aiPlans = [
     {
         title: "Desarrollo de alto nivel",
         subtitle: "Sistemas web escalables diseñados para tus necesidades.",
-        price: "1.399.980",
+        price: "1.176.454",
         from: true,
         featured: true,
         features: [
@@ -69,7 +82,7 @@ const aiPlans = [
     {
         title: "Desarrollo de Apps Móviles",
         subtitle: "Aplicaciones móviles nativas o híbridas para tu empresa.",
-        price: "2.699.980",
+        price: "2.268.891",
         from: true,
         features: [
             "Desarrollo para iOS y Android",
@@ -108,13 +121,13 @@ const PricingCard = ({ plan }: { plan: any }) => (
         <p className="text-center text-muted text-[13px] leading-[1.45] min-h-[38px] mt-2 m-0">{plan.subtitle}</p>
 
         <div className="mt-4 flex items-baseline justify-center gap-1 leading-none">
-            {plan.from && <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>}
+            <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>
             <span className="text-sm font-[900] text-white/50 -translate-y-[2px]">$</span>
             <span className="text-[44px] font-[1000] tracking-[-1px] text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent drop-shadow-[0_14px_28px_rgba(0,0,0,0.25)]">{plan.price}</span>
             <span className="text-[12px] font-[900] text-white/50 tracking-widest -translate-y-[2px]">CLP</span>
         </div>
         <div className="mt-2 text-center text-[12px] font-[800] text-white/60 uppercase tracking-wider">
-            IVA INC
+            + IVA
         </div>
 
         <ul className="flex-grow mt-[18px] flex flex-col gap-[11px] list-none p-0">
@@ -164,7 +177,7 @@ const PricingTable = () => {
                         Ecommerce
                     </span>
                 </div>
-                <div className="grid grid-cols-1 gap-[18px] mb-12 max-w-[420px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px] mb-12 max-w-[800px] mx-auto">
                     {ecommercePlans.map((plan, idx) => <PricingCard key={idx} plan={plan} />)}
                 </div>
 
