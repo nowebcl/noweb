@@ -121,7 +121,7 @@ const PricingCard = ({ plan }: { plan: any }) => (
         <p className="text-center text-muted text-[13px] leading-[1.45] min-h-[38px] mt-2 m-0">{plan.subtitle}</p>
 
         <div className="mt-4 flex items-baseline justify-center gap-1 leading-none">
-            <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>
+            {plan.title !== "Fast Page" && <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>}
             <span className="text-sm font-[900] text-white/50 -translate-y-[2px]">$</span>
             <span className="text-[44px] font-[1000] tracking-[-1px] text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent drop-shadow-[0_14px_28px_rgba(0,0,0,0.25)]">{plan.price}</span>
             <span className="text-[12px] font-[900] text-white/50 tracking-widest -translate-y-[2px]">CLP</span>
