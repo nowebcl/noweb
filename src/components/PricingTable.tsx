@@ -5,24 +5,9 @@ import { motion } from 'framer-motion';
 
 const designPlans = [
     {
-        title: "IA Express",
-        badge: "Cupos limitados",
-        subtitle: "Página web instantánea con inteligencia artificial.",
-        price: "63.008",
-        features: [
-            "Página web instantánea con IA",
-            "Dominio .cl incluido",
-            "Página personalizada a gusto del cliente",
-            "Ultra rápida",
-            { text: "Administrable", excluded: true },
-            { text: "Correos corporativos personalizados", excluded: true },
-            { text: "Cambios", excluded: true }
-        ]
-    },
-    {
         title: "Fast Page",
         subtitle: "Presencia profesional en tiempo récord.",
-        price: "210.067",
+        price: "210.980",
         features: [
             "Dominio + hosting incluidos",
             "Información de tu empresa + botones",
@@ -36,7 +21,7 @@ const designPlans = [
     {
         title: "Plan PRO Corporativo",
         subtitle: "Ideal para Inmobiliarias, automotoras, diarios, proyectos grandes",
-        price: "310.067",
+        price: "310.980",
         featured: true,
         features: [
             "Diseño profesional + responsive",
@@ -54,7 +39,7 @@ const ecommercePlans = [
     {
         title: "Fast Shop",
         subtitle: "Tienda online rápida, accesible para pymes y tiendas de Instagram.",
-        price: "259.990",
+        price: "259.980",
         features: [
             "Tienda online súper rápida",
             "Disponible online 24/7",
@@ -67,7 +52,7 @@ const ecommercePlans = [
     {
         title: "E-commerce FULL.",
         subtitle: "Todas las características de Shopify, pero con un solo pago.",
-        price: "462.168",
+        price: "459.980",
         featured: true,
         features: [
             "Sitio premium con carga de +1000 productos",
@@ -83,7 +68,7 @@ const aiPlans = [
     {
         title: "Desarrollo de alto nivel",
         subtitle: "Sistemas web escalables diseñados para tus necesidades.",
-        price: "1.176.454",
+        price: "1.176.980",
         from: true,
         featured: true,
         features: [
@@ -97,7 +82,7 @@ const aiPlans = [
     {
         title: "Desarrollo de Apps Móviles",
         subtitle: "Aplicaciones móviles nativas o híbridas para tu empresa.",
-        price: "2.268.891",
+        price: "2.268.980",
         from: true,
         features: [
             "Desarrollo para iOS y Android",
@@ -197,7 +182,7 @@ const PricingTable = () => {
                         Diseño Web
                     </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px] mb-12 max-w-[1200px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[18px] mb-12 max-w-[900px] mx-auto">
                     {designPlans.map((plan, idx) => <PricingCard key={idx} plan={plan} />)}
                 </div>
 
