@@ -4,23 +4,239 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+    const canvasRef = React.useRef<HTMLCanvasElement>(null);
+    const sectionRef = React.useRef<HTMLElement>(null);
+
+    React.useEffect(() => {
+        const canvas = canvasRef.current;
+        const section = sectionRef.current;
+        if (!canvas || !section) return;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        let particles: any[] = [];
+        let animationFrameId: number;
+        let time = 0;
+
+        const mouse = {
+            x: null as number | null,
+            y: null as number | null,
+            active: false,
+            radius: 220 // Gravity well warp radius
+        };
+
+        // Resize canvas and update centers
+        let centerX = canvas.width / 2;
+        let centerY = canvas.height / 2;
+
+        const resizeCanvas = () => {
+            canvas.width = section.offsetWidth;
+            canvas.height = section.offsetHeight;
+            centerX = canvas.width / 2;
+            centerY = canvas.height / 2;
+            initParticles();
+        };
+
+        // Particle class for 3D concentric orbits
+        class Particle {
+            angle: number;
+            ringIndex: number;
+            baseRadius: number;
+            speed: number;
+            radius: number;
+            baseAlpha: number;
+            color: string;
+            wavePhase: number;
+
+            constructor(angle: number, ringIndex: number, totalRings: number) {
+                this.angle = angle;
+                this.ringIndex = ringIndex;
+
+                // Concentric base radii: inner (120px), middle (210px), outer (310px)
+                const baseRadii = [120, 210, 310];
+                this.baseRadius = baseRadii[ringIndex] || (100 + ringIndex * 90);
+
+                // Angular velocity (Kepler's Law simulation: inner rings rotate faster!)
+                this.speed = (0.003 + (totalRings - ringIndex) * 0.002) * (Math.random() * 0.3 + 0.85);
+
+                // Base properties
+                this.radius = Math.random() * 1.2 + 0.8; // 0.8px to 2px particles
+                this.baseAlpha = Math.random() * 0.4 + 0.35; // 0.35 to 0.75 base opacity
+
+                // Define colors based on the ring index matching Noweb brand colors
+                const colors = [
+                    'rgba(0, 212, 255, alpha)',      // Inner Ring: Cyan (accent)
+                    'rgba(123, 44, 255, alpha)',      // Middle Ring: Purple (primary)
+                    'rgba(255, 61, 154, alpha)'       // Outer Ring: Fuchsia (secondary)
+                ];
+                this.color = colors[ringIndex % colors.length];
+
+                // Random offset for organic 3D wave morphing
+                this.wavePhase = Math.random() * Math.PI * 2;
+            }
+
+            draw() {
+                if (!ctx) return;
+                // 1. Organic ripple morphing: Sine wave distortion of base radius over time
+                const wave = Math.sin(this.angle * 3 + time * 1.2 + this.wavePhase) * (this.baseRadius * 0.06);
+                const r = this.baseRadius + wave;
+
+                // 2. Base 3D coordinates in orbital plane (X, Y in orbit, Z as slight waving)
+                const x = r * Math.cos(this.angle);
+                const y = r * Math.sin(this.angle);
+                const z = Math.sin(this.angle * 2.5 + time * 0.8) * (this.baseRadius * 0.08);
+
+                // 3. 3D Rotations (Tilt the orbits in space for 3D depth)
+                // Tilt around X-axis (Pitch = 60 degrees) and Y-axis (Yaw = 18 degrees)
+                const cosPitch = Math.cos(1.05); // 60 degrees
+                const sinPitch = Math.sin(1.05);
+                const cosYaw = Math.cos(0.31);   // 18 degrees
+                const sinYaw = Math.sin(0.31);
+
+                // Apply pitch (rotation around X)
+                let x1 = x;
+                let y1 = y * cosPitch - z * sinPitch;
+                let z1 = y * sinPitch + z * cosPitch;
+
+                // Apply yaw (rotation around Y)
+                let x2 = x1 * cosYaw - z1 * sinYaw;
+                let y2 = y1;
+                let z2 = x1 * sinYaw + z1 * cosYaw;
+
+                // 4. Perspective Projection
+                const focalLength = 550;
+                const scale = focalLength / (focalLength + z2);
+
+                let screenX = centerX + x2 * scale;
+                let screenY = centerY + y2 * scale;
+
+                // 5. Gravitational Warp Interaction (Lens distortion around cursor)
+                if (mouse.active && mouse.x !== null && mouse.y !== null) {
+                    const dx = screenX - mouse.x;
+                    const dy = screenY - mouse.y;
+                    const distance = Math.hypot(dx, dy);
+
+                    if (distance < mouse.radius) {
+                        // Gravitational distortion force: stronger when closer
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const pushAngle = Math.atan2(dy, dx);
+
+                        // Push particles outward slightly to warp the rings around the cursor,
+                        // simulating a gravitational lens distortion
+                        const warpDist = force * 40 * scale;
+                        screenX += Math.cos(pushAngle) * warpDist;
+                        screenY += Math.sin(pushAngle) * warpDist;
+                    }
+                }
+
+                // 6. Draw projected particle with depth shading
+                // Deeper particles (positive z2) are fainter, closer particles (negative z2) are brighter
+                const depthAlpha = (1.1 - (z2 / this.baseRadius)) * 0.5 * this.baseAlpha;
+                const alpha = Math.max(0.1, Math.min(0.9, depthAlpha));
+
+                ctx.beginPath();
+                // Particle size scales with perspective depth
+                ctx.arc(screenX, screenY, this.radius * scale, 0, Math.PI * 2);
+                ctx.fillStyle = this.color.replace('alpha', alpha.toFixed(2));
+                ctx.fill();
+            }
+
+            update() {
+                // Rotate along the orbit
+                this.angle += this.speed;
+                if (this.angle > Math.PI * 2) this.angle -= Math.PI * 2;
+            }
+        }
+
+        // Initialize concentric orbits
+        const initParticles = () => {
+            particles = [];
+            const totalRings = 3;
+
+            // Particle densities per ring
+            const ringDensities = [150, 250, 350];
+
+            for (let ringIndex = 0; ringIndex < totalRings; ringIndex++) {
+                const count = ringDensities[ringIndex];
+                for (let i = 0; i < count; i++) {
+                    // Distribute angles evenly with a small random jitter for natural organic dispersion
+                    const baseAngle = (i / count) * Math.PI * 2;
+                    const jitter = (Math.random() - 0.5) * (Math.PI * 2 / count) * 0.4;
+                    particles.push(new Particle(baseAngle + jitter, ringIndex, totalRings));
+                }
+            }
+        };
+
+        // Main animation loop
+        const animate = () => {
+            if (!ctx) return;
+            // Clean clear for crisp particles
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            time += 0.015; // Increment time for orbit animations
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            animationFrameId = requestAnimationFrame(animate);
+        };
+
+        // Track mouse coordinates on hero section
+        const handleMouseMove = (e: MouseEvent) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        };
+
+        const handleMouseEnter = () => {
+            mouse.active = true;
+        };
+
+        const handleMouseLeave = () => {
+            mouse.active = false;
+            mouse.x = null;
+            mouse.y = null;
+        };
+
+        section.addEventListener('mousemove', handleMouseMove);
+        section.addEventListener('mouseenter', handleMouseEnter);
+        section.addEventListener('mouseleave', handleMouseLeave);
+
+        // Handle window resizing with debounce
+        let resizeTimeout: NodeJS.Timeout;
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                resizeCanvas();
+            }, 150);
+        };
+        window.addEventListener('resize', handleResize);
+
+        // Start
+        resizeCanvas();
+        animate();
+
+        return () => {
+            cancelAnimationFrame(animationFrameId);
+            window.removeEventListener('resize', handleResize);
+            section.removeEventListener('mousemove', handleMouseMove);
+            section.removeEventListener('mouseenter', handleMouseEnter);
+            section.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []);
+
     return (
-        <section className="relative min-h-[620px] flex items-center justify-center text-center px-4 pt-32 pb-20 overflow-hidden rounded-[18px] mx-4 my-4 shadow-[0_18px_60px_rgba(0,0,0,0.45)] isolate bg-[#05050b]">
-            {/* Video Background */}
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-[1.02] -z-[3] saturate-[1.05] contrast-[1.05]"
-                poster="/hero-bg.webm"
-            >
-                <source src="/hero-bg.webm" type="video/webm" />
-            </video>
+        <section ref={sectionRef} className="relative min-h-[620px] flex items-center justify-center text-center px-4 pt-32 pb-20 overflow-hidden rounded-[18px] mx-4 my-4 shadow-[0_18px_60px_rgba(0,0,0,0.45)] isolate bg-black">
+            {/* 3D Concentric Particle Canvas */}
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none -z-[3]" />
 
             {/* Overlays */}
-            <div className="absolute inset-0 -z-[2] bg-[radial-gradient(900px_520px_at_50%_10%,rgba(123,44,255,0.35),transparent_55%),radial-gradient(900px_520px_at_70%_20%,rgba(255,61,154,0.22),transparent_60%),linear-gradient(180deg,rgba(5,5,11,0.78),rgba(5,5,11,0.92))]"></div>
-            <div className="absolute inset-0 -z-[1] opacity-[0.22] nw-grid-pattern [mask-image:radial-gradient(circle_at_50%_20%,rgba(0,0,0,1),rgba(0,0,0,0.25)_55%,rgba(0,0,0,0)_80%)]"></div>
+            <div className="absolute inset-0 -z-[2] bg-[radial-gradient(circle_at_center,rgba(113,137,255,0.15)_0%,transparent_60%),radial-gradient(900px_520px_at_50%_10%,rgba(123,44,255,0.25),transparent_55%),radial-gradient(900px_520px_at_70%_20%,rgba(255,61,154,0.15),transparent_60%),linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.85))]"></div>
+            <div className="absolute inset-0 -z-[1] opacity-[0.15] nw-grid-pattern [mask-image:radial-gradient(circle_at_50%_20%,rgba(0,0,0,1),rgba(0,0,0,0.25)_55%,rgba(0,0,0,0)_80%)]"></div>
 
             <div className="max-w-[980px] flex flex-col items-center gap-[14px] relative z-10">
                 <motion.div
