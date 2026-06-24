@@ -309,7 +309,7 @@ const Hero = () => {
                         </div>
                         <div className="hidden md:block w-px h-[26px] bg-white/15"></div>
                         <div className="flex items-baseline gap-3">
-                            <span className="text-sm font-[700] text-white/40 uppercase tracking-wider">Clientes desde Arica a Chiloé</span>
+                            <span className="text-sm font-[700] text-white/40 uppercase tracking-wider">Clientes en todo Chile</span>
                         </div>
                     </div>
                 </motion.div>
