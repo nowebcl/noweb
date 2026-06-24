@@ -304,13 +304,12 @@ const Hero = () => {
                     <p className="m-0 text-[13px] font-[700] text-white/60">Confían en nosotros empresas de la Región de Los Lagos</p>
                     <div className="flex flex-wrap items-center justify-center gap-[26px]">
                         <div className="flex items-baseline gap-3">
-                            <span className="text-[28px] font-[1000] text-white/70 tracking-[-0.4px]">+200</span>
+                            <span className="text-[28px] font-[1000] text-white/70 tracking-[-0.4px]">+1200</span>
                             <span className="text-sm font-[700] text-white/40 uppercase">proyectos entregados</span>
                         </div>
                         <div className="hidden md:block w-px h-[26px] bg-white/15"></div>
                         <div className="flex items-baseline gap-3">
-                            <span className="text-[28px] font-[1000] text-white/70 tracking-[-0.4px]">100%</span>
-                            <span className="text-sm font-[700] text-white/40 uppercase">clientes satisfechos</span>
+                            <span className="text-sm font-[700] text-white/40 uppercase tracking-wider">Clientes desde Arica a Chiloé</span>
                         </div>
                     </div>
                 </motion.div>
