@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const items = [
     { src: "/portfolio/Recurso-12.webp", title: "Sitio Web Constructora", location: "Puerto Montt", alt: "Diseño de página web para constructora en Puerto Montt" },
@@ -43,7 +44,15 @@ const PortfolioGallery = () => {
                     >
                         {row1.map((item, idx) => (
                             <div key={idx} className="w-[280px] h-[180px] md:w-[280px] md:h-[180px] sm:w-[180px] sm:h-[118px] rounded-[18px] border border-white/10 bg-white/5 overflow-hidden shadow-[0_18px_60px_rgba(0,0,0,0.45)] relative group">
-                                <img src={item.src} alt={item.alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                                <Image
+                                    src={item.src}
+                                    alt={item.alt}
+                                    width={280}
+                                    height={180}
+                                    sizes="(max-width: 640px) 180px, 280px"
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                    loading="lazy"
+                                />
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center p-4 text-center">
                                     <h3 className="text-white text-sm font-bold m-0">{item.title} en {item.location}</h3>
                                 </div>
@@ -62,7 +71,15 @@ const PortfolioGallery = () => {
                     >
                         {row2.map((item, idx) => (
                             <div key={idx} className="w-[280px] h-[180px] md:w-[280px] md:h-[180px] sm:w-[180px] sm:h-[118px] rounded-[18px] border border-white/10 bg-white/5 overflow-hidden shadow-[0_18px_60px_rgba(0,0,0,0.45)] relative group">
-                                <img src={item.src} alt={item.alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                                <Image
+                                    src={item.src}
+                                    alt={item.alt}
+                                    width={280}
+                                    height={180}
+                                    sizes="(max-width: 640px) 180px, 280px"
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                    loading="lazy"
+                                />
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center p-4 text-center">
                                     <h3 className="text-white text-sm font-bold m-0">{item.title} en {item.location}</h3>
                                 </div>

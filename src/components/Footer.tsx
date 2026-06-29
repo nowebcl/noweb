@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -11,10 +12,13 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="flex flex-col gap-5">
                         <a href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
-                            <img
+                            <Image
                                 src="/brand-logo.png"
                                 alt="Noweb Labs"
+                                width={40}
+                                height={40}
                                 className="w-10 h-auto"
+                                loading="lazy"
                             />
                             <span className="text-white font-[1000] text-xl tracking-tight">noweb.cl</span>
                         </a>

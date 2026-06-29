@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -33,10 +34,13 @@ const Navbar = () => {
             <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <a href="/" className="relative z-10 flex items-center gap-3 block group">
-                    <img
+                    <Image
                         src="/brand-logo.png"
                         alt="Noweb Labs"
+                        width={32}
+                        height={32}
                         className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+                        priority
                     />
                     <span className="text-white font-[1000] text-xl tracking-tight">noweb.cl</span>
                 </a>

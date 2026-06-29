@@ -154,8 +154,9 @@ const Hero = () => {
             particles = [];
             const totalRings = 3;
 
-            // Particle densities per ring
-            const ringDensities = [150, 250, 350];
+            // Particle densities per ring (fewer particles on mobile to improve PageSpeed score)
+            const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+            const ringDensities = isMobile ? [50, 95, 135] : [150, 250, 350];
 
             for (let ringIndex = 0; ringIndex < totalRings; ringIndex++) {
                 const count = ringDensities[ringIndex];
@@ -299,17 +300,17 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="mt-[22px] flex flex-col items-center gap-[14px]"
+                    className="mt-8 md:mt-[22px] flex flex-col items-center gap-3.5"
                 >
-                    <p className="m-0 text-[13px] font-[700] text-white/60">Confían en nosotros empresas de la Región de Los Lagos</p>
-                    <div className="flex flex-wrap items-center justify-center gap-[26px]">
-                        <div className="flex items-baseline gap-3">
-                            <span className="text-[28px] font-[1000] text-white/70 tracking-[-0.4px]">+1200</span>
-                            <span className="text-sm font-[700] text-white/40 uppercase">proyectos entregados</span>
+                    <p className="m-0 text-[11px] md:text-[13px] font-[800] text-white/40 uppercase tracking-widest text-center px-4">Confían en nosotros empresas de la Región de Los Lagos</p>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[26px]">
+                        <div className="flex items-center gap-2">
+                            <span className="text-2xl md:text-[28px] font-[1000] text-white/80 tracking-[-0.5px]">+1200</span>
+                            <span className="text-[11px] md:text-sm font-[800] text-white/45 uppercase tracking-wider">proyectos entregados</span>
                         </div>
-                        <div className="hidden md:block w-px h-[26px] bg-white/15"></div>
-                        <div className="flex items-baseline gap-3">
-                            <span className="text-sm font-[700] text-white/40 uppercase tracking-wider">Clientes en todo Chile</span>
+                        <div className="hidden md:block w-px h-5 bg-white/15"></div>
+                        <div className="flex items-center">
+                            <span className="text-[11px] md:text-sm font-[800] text-white/45 uppercase tracking-wider text-center">Clientes en todo Chile</span>
                         </div>
                     </div>
                 </motion.div>
