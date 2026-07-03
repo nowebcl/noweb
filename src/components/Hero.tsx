@@ -253,10 +253,10 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-[clamp(34px,4.8vw,64px)] font-[1000] leading-[1.02] tracking-[-1px] m-0"
+                    className="text-[clamp(24px,4.5vw,60px)] font-[1000] leading-[1.12] sm:leading-[1.02] tracking-tight sm:tracking-[-1.5px] m-0"
                 >
-                    Ahora en Puerto Montt: <br />
-                    <span className="nw-grad drop-shadow-[0_10px_30px_rgba(255,61,154,0.10)]">Diseño Web y Páginas</span><br />
+                    Ahora en Puerto Montt: <br className="hidden md:inline" />
+                    <span className="nw-grad drop-shadow-[0_10px_30px_rgba(255,61,154,0.10)]">Diseño Web y Páginas</span> <br className="hidden md:inline" />
                     de Alto Rendimiento
                 </motion.h1>
 
@@ -264,9 +264,9 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="m-0 max-w-[70ch] text-muted text-base leading-[1.6] md:text-lg"
+                    className="m-0 max-w-[70ch] text-muted text-xs sm:text-sm md:text-base leading-[1.65] text-justify"
                 >
-                    Como agencia digital líder en Puerto Montt, creamos sitios web y e-commerce que convierten.<br />
+                    Como agencia digital líder en Puerto Montt, creamos sitios web y e-commerce que convierten. <br className="hidden md:inline" />
                     Optimización SEO local, autoadministrables y diseñados para Pymes de la Región de Los Lagos.
                 </motion.p>
 
@@ -305,8 +305,13 @@ const Hero = () => {
                     <p className="m-0 text-[11px] md:text-[13px] font-[800] text-white/40 uppercase tracking-widest text-center px-4">Confían en nosotros empresas de la Región de Los Lagos</p>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[26px]">
                         <div className="flex items-center gap-2">
-                            <span className="text-2xl md:text-[28px] font-[1000] text-white/80 tracking-[-0.5px]">+1200</span>
-                            <span className="text-[11px] md:text-sm font-[800] text-white/45 uppercase tracking-wider">proyectos entregados</span>
+                            <span className="text-2xl md:text-[28px] font-[1000] text-white/80 tracking-[-0.5px]">+8000</span>
+                            <span className="text-[11px] md:text-sm font-[800] text-white/45 uppercase tracking-wider">proyectos terminados</span>
+                        </div>
+                        <div className="hidden md:block w-px h-5 bg-white/15"></div>
+                        <div className="flex items-center gap-2">
+                            <span className="text-2xl md:text-[28px] font-[1000] text-white/80 tracking-[-0.5px]">4</span>
+                            <span className="text-[11px] md:text-sm font-[800] text-white/45 uppercase tracking-wider">años de experiencia</span>
                         </div>
                         <div className="hidden md:block w-px h-5 bg-white/15"></div>
                         <div className="flex items-center">

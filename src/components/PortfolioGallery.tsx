@@ -30,7 +30,7 @@ const PortfolioGallery = () => {
     return (
         <section id="portafolio" className="py-20 overflow-hidden bg-background">
             <div className="max-w-[1200px] mx-auto px-4 mb-[18px] text-center">
-                <h2 className="m-0 text-4xl font-[1000] tracking-[-1px]">E-commerce y Tiendas Online que Venden Más</h2>
+                <h2 className="m-0 text-4xl font-[1000] tracking-[-1px]">Tiendas online vendiendo 24/7</h2>
                 <p className="mt-2.5 text-muted font-[650] text-sm md:text-base">Proyectos reales de diseño web en Puerto Montt y Puerto Varas.</p>
             </div>
 

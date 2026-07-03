@@ -5,7 +5,6 @@ import TechnicalSection from "@/components/TechnicalSection";
 import PricingTable from "@/components/PricingTable";
 import ReviewsScroll from "@/components/ReviewsScroll";
 import FAQs from "@/components/FAQs";
-import CustomQuote from "@/components/CustomQuote";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <WorkProcess />
         <TechnicalSection />
         <PricingTable />
-        <CustomQuote />
         <ReviewsScroll />
         <FAQs />
 
