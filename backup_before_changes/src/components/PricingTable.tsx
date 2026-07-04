@@ -95,7 +95,7 @@ const aiPlans = [
 ];
 
 const checkSvg = (
-    <svg className="w-[18px] h-[18px] text-white/80 shrink-0 mt-[1px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="w-[18px] h-[18px] text-accent shrink-0 mt-[1px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 6L9 17l-5-5" />
     </svg>
 );
@@ -116,14 +116,14 @@ const PricingCard = ({ plan }: { plan: any }) => (
             }`}
     >
         {/* Glow */}
-        <div className="absolute inset-x-[-140px] -top-[140px] h-[320px] bg-[radial-gradient(circle_at_35%_25%,rgba(255,255,255,0.06),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.04),transparent_60%)] blur-[10px] opacity-[0.9] -z-[1]"></div>
+        <div className="absolute inset-x-[-140px] -top-[140px] h-[320px] bg-[radial-gradient(circle_at_35%_25%,rgba(123,44,255,0.22),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,61,154,0.16),transparent_60%),radial-gradient(circle_at_55%_55%,rgba(0,212,255,0.1),transparent_70%)] blur-[10px] opacity-[0.9] -z-[1]"></div>
 
         {plan.badge ? (
-            <div className="absolute -top-1 px-4 py-1.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20 shadow-[0_4px_12px_rgba(255,255,255,0.15)]">
+            <div className="absolute -top-1 px-4 py-1.5 bg-[#ff3d9a] text-white text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20 shadow-[0_4px_12px_rgba(255,61,154,0.3)]">
                 {plan.badge}
             </div>
         ) : plan.featured ? (
-            <div className="absolute -top-1 px-4 py-1.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20">
+            <div className="absolute -top-1 px-4 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-b-lg self-center z-20">
                 Popular
             </div>
         ) : null}
@@ -134,7 +134,7 @@ const PricingCard = ({ plan }: { plan: any }) => (
         <div className="mt-4 flex items-baseline justify-center gap-1 leading-none">
             {plan.title !== "Fast Page" && <span className="text-[14px] font-[900] text-white/40 uppercase tracking-tighter mr-1">Desde</span>}
             <span className="text-sm font-[900] text-white/50 -translate-y-[2px]">$</span>
-            <span className="text-[44px] font-[1000] tracking-[-1px] text-white drop-shadow-[0_10px_20px_rgba(255,255,255,0.05)]">{plan.price}</span>
+            <span className="text-[44px] font-[1000] tracking-[-1px] text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent drop-shadow-[0_14px_28px_rgba(0,0,0,0.25)]">{plan.price}</span>
             <span className="text-[12px] font-[900] text-white/50 tracking-widest -translate-y-[2px]">CLP</span>
         </div>
         <div className="mt-2 text-center text-[12px] font-[800] text-white/60 uppercase tracking-wider">
@@ -158,18 +158,16 @@ const PricingCard = ({ plan }: { plan: any }) => (
             href={`https://wa.me/56987843957?text=${encodeURIComponent(`Hola! Quiero contratar el plan: ${plan.title}`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={`mt-4 w-full flex items-center justify-center gap-2.5 py-3.5 rounded-[14px] font-[950] text-sm transition-all duration-300 hover:-translate-y-px active:translate-y-px ${plan.featured
-                ? "bg-black/40 border border-white/15 text-white hover:bg-white hover:text-black shadow-[0_12px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.12)] group"
+            className={`mt-4 w-full flex items-center justify-center gap-2.5 py-3.5 rounded-[14px] font-[950] text-sm transition-all ${plan.featured
+                ? "bg-gradient-to-r from-[#b53cff] via-[#ff3d9a] to-[#00d4ff] text-white shadow-[0_18px_55px_rgba(181,60,255,0.22),0_18px_55px_rgba(0,212,255,0.16)] hover:brightness-105"
                 : "bg-white/[0.045] border border-white/15 text-white/92 hover:border-white/25 hover:bg-white/10"
                 }`}
         >
-            <div className="relative flex items-center justify-center">
-                <svg className="w-[18px] h-[18px] text-[#25D366] group-hover:text-black transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.35-4.45-.98L3 20l.98-4.05A8.5 8.5 0 1 1 21 11.5z" />
-                </svg>
-            </div>
+            <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.35-4.45-.98L3 20l.98-4.05A8.5 8.5 0 1 1 21 11.5z" />
+            </svg>
             <span>Contratar ahora</span>
-            <span className="font-black transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+            <span className="font-black">→</span>
         </a>
     </motion.article>
 );

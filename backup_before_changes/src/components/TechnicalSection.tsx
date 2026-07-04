@@ -38,7 +38,7 @@ const TechnicalSection = () => {
     return (
         <section id="servicios" className="py-24 bg-background relative overflow-hidden isolate">
             {/* Design Elements constant with Noweb style */}
-            <div className="absolute inset-x-[-140px] top-[10%] h-[400px] bg-[radial-gradient(circle_at_25%_30%,rgba(255,255,255,0.04),transparent_55%)] blur-[40px] opacity-[0.9] -z-[1]"></div>
+            <div className="absolute inset-x-[-140px] top-[10%] h-[400px] bg-[radial-gradient(circle_at_25%_30%,rgba(123,44,255,0.12),transparent_55%)] blur-[40px] opacity-[0.9] -z-[1]"></div>
             <div className="absolute inset-0 -z-[1] opacity-[0.1] nw-grid-pattern [mask-image:radial-gradient(circle_at_50%_50%,rgba(0,0,0,1),transparent_80%)]"></div>
 
             <div className="max-w-[1200px] mx-auto px-6">
@@ -65,7 +65,7 @@ const TechnicalSection = () => {
                                     { num: '3', text: 'Integración con APIs y soluciones de Automatización IA.' }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-5 group">
-                                        <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-black font-black text-sm shadow-[0_10px_30px_rgba(255,255,255,0.05)] group-hover:scale-110 transition-transform">
+                                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#b53cff] to-[#00d4ff] flex items-center justify-center text-white font-black text-sm shadow-[0_10px_30px_rgba(181,60,255,0.2)] group-hover:scale-110 transition-transform">
                                             {item.num}
                                         </div>
                                         <p className="m-0 font-[700] text-white/90 text-[15px]">{item.text}</p>
@@ -86,10 +86,10 @@ const TechnicalSection = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="p-7 rounded-[22px] border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] shadow-[0_18px_60px_rgba(0,0,0,0.40)] relative overflow-hidden group isolate"
                             >
-                                <div className="absolute inset-x-[-120px] -top-[120px] h-[240px] bg-[radial-gradient(circle_at_25%_30%,rgba(255,255,255,0.05),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.02),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
+                                <div className="absolute inset-x-[-120px] -top-[120px] h-[240px] bg-[radial-gradient(circle_at_25%_30%,rgba(123,44,255,0.12),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(0,212,255,0.08),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
 
                                 <div className="flex gap-6 items-start relative z-10">
-                                    <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:scale-110 group-hover:text-white/80 transition-all duration-300">
+                                    <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#b53cff] group-hover:scale-110 group-hover:text-[#00d4ff] transition-all duration-300">
                                         <div className="w-7 h-7">{service.icon}</div>
                                     </div>
                                     <div>

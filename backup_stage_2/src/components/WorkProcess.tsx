@@ -64,9 +64,9 @@ const WorkProcess = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-x-12 mt-12 overflow-visible">
                     {/* Vertical Timeline Desktop */}
                     <div className="hidden lg:flex flex-col items-center gap-[38px] pt-3 relative">
-                        <div className="absolute top-[56px] bottom-5 w-[2px] bg-gradient-to-b from-white/0 via-white/40 via-white/10 to-transparent opacity-[0.95] rounded-full"></div>
+                        <div className="absolute top-[56px] bottom-5 w-[2px] bg-gradient-to-b from-primary/0 via-primary/65 via-accent/65 to-accent/0 opacity-[0.95] rounded-full"></div>
                         {steps.map((step, idx) => (
-                            <div key={idx} className="w-[58px] h-[58px] rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center relative z-10 shadow-[0_12px_40px_rgba(255,255,255,0.05)] text-white">
+                            <div key={idx} className="w-[58px] h-[58px] rounded-2xl bg-gradient-to-br from-[#b53cff]/95 to-[#00d4ff]/75 border border-white/15 flex items-center justify-center relative z-10 shadow-[0_18px_60px_rgba(181,60,255,0.16)] text-white">
                                 <div className="w-[26px] h-[26px]">{step.icon}</div>
                             </div>
                         ))}
@@ -75,7 +75,7 @@ const WorkProcess = () => {
                     {/* Mobile Icons Row */}
                     <div className="lg:hidden flex justify-center gap-3.5 mb-8">
                         {steps.map((step, idx) => (
-                            <div key={idx} className="w-[50px] h-[50px] rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+                            <div key={idx} className="w-[50px] h-[50px] rounded-2xl bg-gradient-to-br from-[#b53cff]/95 to-[#00d4ff]/75 border border-white/15 flex items-center justify-center text-white">
                                 <div className="w-5 h-5">{step.icon}</div>
                             </div>
                         ))}
@@ -89,10 +89,10 @@ const WorkProcess = () => {
                                 whileHover={{ y: -5 }}
                                 className="relative overflow-hidden rounded-[18px] border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-[22px] md:p-[26px] shadow-[0_18px_60px_rgba(0,0,0,0.40)] isolate"
                             >
-                                <div className="absolute inset-x-[-140px] -top-[140px] h-[260px] bg-[radial-gradient(circle_at_25%_30%,rgba(255,255,255,0.05),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.02),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
+                                <div className="absolute inset-x-[-140px] -top-[140px] h-[260px] bg-[radial-gradient(circle_at_25%_30%,rgba(123,44,255,0.16),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(0,212,255,0.1),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
 
                                 <div className="flex items-baseline gap-3 mb-2 relative z-10">
-                                    <span className="font-[1000] text-white/40 text-xs tracking-widest uppercase">{step.num}</span>
+                                    <span className="font-[1000] text-[#b53cff] text-xs tracking-widest uppercase">{step.num}</span>
                                     <h3 className="font-[1000] text-lg md:text-xl tracking-tight m-0">{step.title}</h3>
                                 </div>
 

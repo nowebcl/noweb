@@ -66,9 +66,9 @@ const Hero = () => {
 
                 // Define colors based on the ring index matching Noweb brand colors
                 const colors = [
-                    'rgba(255, 255, 255, alpha)',      // Inner Ring: Pure White
-                    'rgba(200, 200, 200, alpha)',      // Middle Ring: Silver Gray
-                    'rgba(255, 255, 255, alpha * 0.7)' // Outer Ring: Soft White
+                    'rgba(0, 212, 255, alpha)',      // Inner Ring: Cyan (accent)
+                    'rgba(123, 44, 255, alpha)',      // Middle Ring: Purple (primary)
+                    'rgba(255, 61, 154, alpha)'       // Outer Ring: Fuchsia (secondary)
                 ];
                 this.color = colors[ringIndex % colors.length];
 
@@ -236,7 +236,7 @@ const Hero = () => {
             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none -z-[3]" />
 
             {/* Overlays */}
-            <div className="absolute inset-0 -z-[2] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06)_0%,transparent_60%),radial-gradient(900px_520px_at_50%_10%,rgba(255,255,255,0.08),transparent_55%),radial-gradient(900px_520px_at_70%_20%,rgba(255,255,255,0.04),transparent_60%),linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.95))]"></div>
+            <div className="absolute inset-0 -z-[2] bg-[radial-gradient(circle_at_center,rgba(113,137,255,0.15)_0%,transparent_60%),radial-gradient(900px_520px_at_50%_10%,rgba(123,44,255,0.25),transparent_55%),radial-gradient(900px_520px_at_70%_20%,rgba(255,61,154,0.15),transparent_60%),linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.85))]"></div>
             <div className="absolute inset-0 -z-[1] opacity-[0.15] nw-grid-pattern [mask-image:radial-gradient(circle_at_50%_20%,rgba(0,0,0,1),rgba(0,0,0,0.25)_55%,rgba(0,0,0,0)_80%)]"></div>
 
             <div className="max-w-[980px] flex flex-col items-center gap-[14px] relative z-10">
@@ -245,7 +245,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-white/80 font-bold text-[13px]"
                 >
-                    <span className="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-accent to-secondary shadow-[0_0_0_4px_rgba(123,44,255,0.18)]"></span>
                     Diseño web profesional en Puerto Montt
                 </motion.div>
 
@@ -278,16 +278,14 @@ const Hero = () => {
                 >
                     <a
                         href="https://wa.me/56987843957?text=%C2%A1Hola!%20Quiero%20cotizar%20una%20p%C3%A1gina%20web%20en%20Puerto%20Montt."
-                        className="min-w-[240px] px-[22px] py-[15px] rounded-[14px] font-[900] text-sm text-white bg-black/40 border border-white/15 backdrop-blur-md hover:bg-white hover:text-black shadow-[0_12px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.12)] transition-all duration-300 hover:-translate-y-px active:translate-y-px w-full sm:w-auto flex items-center justify-center gap-3 group"
+                        className="nw-btn-primary min-w-[240px] px-[18px] py-[14px] rounded-[14px] font-[900] text-sm text-white/95 flex items-center justify-center gap-3 relative overflow-hidden transition-all hover:-translate-y-px hover:saturate-[1.05] active:translate-y-px group w-full sm:w-auto"
                     >
-                        <div className="relative flex items-center justify-center">
-                            <svg className="w-[18px] h-[18px] text-[#25D366] group-hover:text-black transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.35-4.45-.98L3 20l.98-4.05A8.5 8.5 0 1 1 21 11.5z"></path>
-                            </svg>
-                            <span className="absolute -top-1.5 -right-1.5 w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse"></span>
-                        </div>
+                        <span className="absolute inset-[-2px] bg-[radial-gradient(circle_at_18%_20%,rgba(255,255,255,0.40),transparent_44%)] opacity-[0.35] pointer-events-none"></span>
+                        <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.35-4.45-.98L3 20l.98-4.05A8.5 8.5 0 1 1 21 11.5z"></path>
+                        </svg>
                         <span>Cotizar por WhatsApp</span>
-                        <span className="font-black transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        <span className="font-black">→</span>
                     </a>
 
                     <a

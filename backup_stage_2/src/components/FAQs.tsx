@@ -25,7 +25,7 @@ const faqs = [
     },
     {
         q: "¿Qué pasa si necesito cambios después de la entrega?",
-        a: "Incluimos <b>30 días de garantía</b> para ajustes y correcciones relacionadas al servicio entregado. Si necesitas mejoras nuevas o cambios mayores, los cotizamos según alcance."
+        a: "Incluimos <b>3 meses de garantía</b> para ajustes y correcciones relacionadas al servicio entregado. Si necesitas mejoras nuevas o cambios mayores, los cotizamos según alcance."
     },
     {
         q: "¿Trabajan con clientes fuera de Puerto Montt?",
@@ -48,15 +48,15 @@ const FAQs = () => {
                             key={idx}
                             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.045] to-white/[0.02] shadow-[0_18px_60px_rgba(0,0,0,0.40)] isolate"
                         >
-                             <div className="absolute inset-x-[-140px] -top-[140px] h-[260px] bg-[radial-gradient(circle_at_25%_30%,rgba(255,255,255,0.05),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.02),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
+                            <div className="absolute inset-x-[-140px] -top-[140px] h-[260px] bg-[radial-gradient(circle_at_25%_30%,rgba(123,44,255,0.14),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(0,212,255,0.08),transparent_60%)] blur-[10px] opacity-[0.95] -z-[1]"></div>
 
                             <summary className="list-none cursor-pointer p-5 flex items-center justify-between gap-3.5 relative z-10 select-none group-open:border-b group-open:border-white/10">
                                 <span className="font-[900] text-sm text-white/92 leading-[1.35]">{faq.q}</span>
-                                 <span className="w-[22px] h-[22px] text-white/60 transition-transform duration-200 group-open:rotate-180 drop-shadow-[0_12px_22px_rgba(255,255,255,0.05)]">
-                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                                         <path d="M6 9l6 6 6-6" />
-                                     </svg>
-                                 </span>
+                                <span className="w-[22px] h-[22px] text-[#b53cff] transition-transform duration-200 group-open:rotate-180 drop-shadow-[0_12px_22px_rgba(181,60,255,0.18)]">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M6 9l6 6 6-6" />
+                                    </svg>
+                                </span>
                             </summary>
 
                             <div
