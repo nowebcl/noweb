@@ -4,43 +4,37 @@ import Image from 'next/image';
 const Footer = () => {
     return (
         <footer id="noweb-footer" className="pt-16 pb-8 bg-background border-t border-white/5 relative isolate overflow-hidden">
-            {/* Background radial glow */}
-            <div className="absolute inset-x-[-200px] bottom-[-200px] h-[400px] bg-[radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.03),transparent_60%)] -z-[1]"></div>
-
             <div className="max-w-[1200px] mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1.1fr] gap-12 md:gap-20">
-                    {/* Brand */}
-                    <div className="flex flex-col gap-5">
-                        <a href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-[780px] mx-auto">
+                    {/* Instagram al costado */}
+                    <div className="flex flex-col gap-3">
+                        <h4 className="m-0 font-[1000] text-sm text-white/95 tracking-widest uppercase flex items-center gap-2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white/80">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>Sígueme en instagram</span>
+                        </h4>
+                        <a 
+                            href="https://www.instagram.com/noweb.dev/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="block overflow-hidden rounded-xl transition-all duration-300 shadow-[0_12px_35px_rgba(0,0,0,0.3)] hover:scale-[1.02] w-full"
+                        >
                             <Image
-                                src="/brand-logo.png"
-                                alt="Noweb Labs"
-                                width={40}
-                                height={40}
-                                className="w-10 h-auto"
+                                src="/ig2.png"
+                                alt="Instagram @noweb.dev"
+                                width={320}
+                                height={200}
+                                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 loading="lazy"
                             />
-                            <span className="text-white font-[1000] text-xl tracking-tight">noweb.cl</span>
                         </a>
-                        <p className="m-0 text-white/70 text-[13px] leading-[1.65] font-[650] max-w-[420px]">
-                            Líderes en diseño web en Puerto Montt y Puerto Varas. Apoyando a emprendedores y Pymes de todo el sur de Chile con tecnología de alto rendimiento y SEO Local.
-                        </p>
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex flex-col gap-6">
-                        <h4 className="m-0 font-[1000] text-sm text-white/95 tracking-widest uppercase">Links Rápidos</h4>
-                        <ul className="m-0 p-0 list-none grid gap-3">
-                            <li><a href="#portafolio" className="text-white/72 text-[13px] font-[650] hover:text-white transition-colors">Nuestros Trabajos</a></li>
-                            <li><a href="#planes" className="text-white/72 text-[13px] font-[650] hover:text-white transition-colors">Planes y Precios</a></li>
-                            <li><a href="#opiniones" className="text-white/72 text-[13px] font-[650] hover:text-white transition-colors">Opiniones Google</a></li>
-                            <li><a href="#nosotros" className="text-white/72 text-[13px] font-[650] hover:text-white transition-colors">Cómo Trabajamos</a></li>
-                            <li><a href="https://cotizador.noweb.cl/" className="text-white/72 text-[13px] font-[650] hover:text-white transition-colors">Cotizador Automático</a></li>
-                        </ul>
                     </div>
 
                     {/* Contact */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-5 md:pl-10">
                         <h4 className="m-0 font-[1000] text-sm text-white/95 tracking-widest uppercase">Contacto</h4>
                         <div className="grid gap-4">
                             <div className="flex items-center gap-3.5 text-white/72 text-[13px] font-[650]">
