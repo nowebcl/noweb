@@ -39,7 +39,7 @@ const ecommercePlans = [
     {
         title: "Fast Shop",
         subtitle: "Tienda online rápida, accesible para pymes y tiendas de Instagram.",
-        price: "259.980",
+        price: "289.980",
         features: [
             "Tienda online súper rápida",
             "Disponible online 24/7",
