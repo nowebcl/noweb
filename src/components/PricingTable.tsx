@@ -19,7 +19,7 @@ const designPlans = [
         ]
     },
     {
-        title: "Plan PRO Corporativo",
+        title: "Página web corporativa",
         subtitle: "Ideal para Inmobiliarias, automotoras, diarios, proyectos grandes",
         price: "310.980",
         featured: true,
