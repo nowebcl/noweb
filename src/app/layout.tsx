@@ -34,8 +34,9 @@ export const metadata: Metadata = {
     "Pymes Chile",
   ],
   icons: {
-    icon: "/icon.png",
-    apple: "/apple-icon.png",
+    icon: "/icon.png?v=2",
+    apple: "/apple-icon.png?v=2",
+    shortcut: "/favicon.ico?v=2",
   },
   authors: [{ name: "Noweb Labs" }],
   creator: "Noweb Labs",
