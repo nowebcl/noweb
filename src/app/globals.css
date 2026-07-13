@@ -31,7 +31,7 @@ body {
 }
 
 .nw-grad {
-  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(135deg, #5a0c2b 0%, #a62a5b 50%, #d45187 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
