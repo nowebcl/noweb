@@ -253,7 +253,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-[clamp(24px,4.5vw,60px)] font-[1000] leading-[1.12] sm:leading-[1.02] tracking-tight sm:tracking-[-1.5px] m-0"
+                    className="text-[clamp(24px,4.5vw,60px)] font-[1000] leading-[1.12] sm:leading-[1.02] tracking-tight sm:tracking-[-1.5px] m-0 text-justify"
                 >
                     Ahora en Puerto Montt: <br className="hidden md:inline" />
                     <span className="nw-grad drop-shadow-[0_10px_30px_rgba(255,61,154,0.10)]">Diseño Web y Páginas</span> <br className="hidden md:inline" />
