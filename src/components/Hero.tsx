@@ -165,6 +165,7 @@ const Hero = () => {
                                 alt="Diseño Web Laptop Preview"
                                 width={820}
                                 height={600}
+                                unoptimized
                                 className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]"
                                 priority
                             />
@@ -186,6 +187,7 @@ const Hero = () => {
                             alt="Noweb Logo"
                             width={200}
                             height={65}
+                            unoptimized
                             className="h-16 sm:h-18 w-auto object-contain"
                             priority
                         />
@@ -199,6 +201,7 @@ const Hero = () => {
                         src="/movil.png"
                         alt="Mobile Background"
                         fill
+                        unoptimized
                         className="object-contain object-center z-0 pointer-events-none"
                         priority
                     />
