@@ -22,7 +22,7 @@ const pymesPlans = [
         ]
     },
     {
-        title: "Catálogo en Línea Administrable",
+        title: "Web Administrable / Catálogo",
         subtitle: "Muestra tus servicios o productos con control total de inventario.",
         price: "149.980",
         featured: true,
