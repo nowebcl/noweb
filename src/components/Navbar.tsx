@@ -35,14 +35,13 @@ const Navbar = () => {
                 {/* Logo */}
                 <a href="/" className="relative z-10 flex items-center gap-3 block group">
                     <Image
-                        src="/brand-logo.png"
+                        src="/logo.png"
                         alt="Noweb Labs"
-                        width={32}
-                        height={32}
-                        className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+                        width={160}
+                        height={48}
+                        className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
                         priority
                     />
-                    <span className="text-white font-[1000] text-xl tracking-tight">noweb.cl</span>
                 </a>
 
                 {/* Desktop Nav */}

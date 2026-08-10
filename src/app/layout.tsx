@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
   display: "swap",
 });
@@ -146,7 +146,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${montserrat.variable} font-sans antialiased`}>
+      <body className={`${raleway.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
