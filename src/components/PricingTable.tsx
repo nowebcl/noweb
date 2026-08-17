@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 // Category 1: Pymes
 const pymesPlans = [
     {
-        title: "Presencia digital web",
+        title: "Web One Shot",
         subtitle: "Presencia web ágil, profesional y lista en tiempo récord.",
         price: "89.990",
         showFrom: false,
