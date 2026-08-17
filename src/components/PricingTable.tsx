@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 // Category 1: Pymes
 const pymesPlans = [
     {
-        title: "Página One Shot",
+        title: "Presencia digital web",
         subtitle: "Presencia web ágil, profesional y lista en tiempo récord.",
         price: "89.990",
         showFrom: false,
         features: [
-            "Dominio .cl incluido",
+            "Dominio incluido",
             "Hosting básico incluido",
             "Botón directo de WhatsApp",
             "Botones de redes sociales",
@@ -22,8 +22,8 @@ const pymesPlans = [
         ]
     },
     {
-        title: "Web Administrable / Catálogo",
-        subtitle: "Muestra tus servicios o productos con control total de inventario.",
+        title: "Landing page administrable",
+        subtitle: "Muestra tus servicios o productos con control total y panel fácil de usar.",
         price: "149.980",
         featured: true,
         badge: "Más Popular",
@@ -32,7 +32,7 @@ const pymesPlans = [
             "Dominio y hosting por 1 año",
             "3 correos corporativos",
             "WhatsApp y redes sociales con conexión directa",
-            "Panel de administración ultra sencillo y rápido (creado por nosotros)",
+            "Panel administrable fácil de usar",
             "Manejo de inventario de servicios o productos",
             "Asesoría para pymes que quieran vender en línea",
             "Entrega en 4 días hábiles",
@@ -44,9 +44,9 @@ const pymesPlans = [
 // Category 2: Diseño Web para Empresas
 const empresasPlans = [
     {
-        title: "Landing Page Profesional Administrable",
-        subtitle: "Desarrollo de alto nivel a medida para marcas exigentes.",
-        price: "210.980",
+        title: "Portafolio comercial administrable",
+        subtitle: "Desarrollo de alto nivel a medida para marcas y empresas exigentes.",
+        price: "310.980",
         showFrom: false,
         features: [
             "Dominio .cl o .com incluido",
@@ -59,9 +59,9 @@ const empresasPlans = [
         ]
     },
     {
-        title: "Página para Agencias Inmobiliarias",
+        title: "Página web para inmobiliarias",
         subtitle: "Plataforma propia especializada en gestión y publicación de propiedades.",
-        price: "310.980",
+        price: "350.000",
         featured: true,
         badge: "Especializado",
         showFrom: false,
@@ -75,7 +75,7 @@ const empresasPlans = [
         ]
     },
     {
-        title: "Plataforma Web para Automotoras",
+        title: "Página web para automotoras",
         subtitle: "Catálogo ilimitado de vehículos con gestión ultrarrápida.",
         price: "350.000",
         showFrom: false,
