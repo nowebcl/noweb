@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const titles = [
-    { pink: "Diseño Web", white: "Profesional" },
-    { pink: "Desarrollo Web", white: "a Medida" },
-    { pink: "Páginas Web", white: "en Puerto Montt" }
+    { pink: "Diseño de Páginas Web", white: "en Puerto Montt" },
+    { pink: "Desarrollo Web & Apps", white: "de Alto Rendimiento" },
+    { pink: "Tiendas Online E-commerce", white: "para tu Negocio" }
 ];
 
 const Hero = () => {
     const [titleIndex, setTitleIndex] = useState(0);
-    const [displayedPink, setDisplayedPink] = useState("");
-    const [displayedWhite, setDisplayedWhite] = useState("");
+    const [displayedPink, setDisplayedPink] = useState("Diseño de Páginas Web");
+    const [displayedWhite, setDisplayedWhite] = useState("en Puerto Montt");
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
@@ -28,27 +28,27 @@ const Hero = () => {
             if (displayedPink.length < fullPink.length) {
                 timer = setTimeout(() => {
                     setDisplayedPink(fullPink.slice(0, displayedPink.length + 1));
-                }, 55);
+                }, 50);
             } else if (displayedWhite.length < fullWhite.length) {
                 timer = setTimeout(() => {
                     setDisplayedWhite(fullWhite.slice(0, displayedWhite.length + 1));
-                }, 55);
+                }, 50);
             } else {
                 // Pause at complete phrase before deleting
                 timer = setTimeout(() => {
                     setIsDeleting(true);
-                }, 2400);
+                }, 2800);
             }
         } else {
             // Deleting backward
             if (displayedWhite.length > 0) {
                 timer = setTimeout(() => {
                     setDisplayedWhite(fullWhite.slice(0, displayedWhite.length - 1));
-                }, 30);
+                }, 25);
             } else if (displayedPink.length > 0) {
                 timer = setTimeout(() => {
                     setDisplayedPink(fullPink.slice(0, displayedPink.length - 1));
-                }, 30);
+                }, 25);
             } else {
                 // Move to next title
                 setIsDeleting(false);
@@ -68,10 +68,10 @@ const Hero = () => {
             <div className="hidden lg:flex flex-col justify-between min-h-screen w-full px-6 lg:px-12 pt-10 sm:pt-16 pb-12 sm:pb-20">
                 {/* Top Logo Header - PC */}
                 <div className="w-full max-w-[1280px] mx-auto flex items-center justify-center relative z-20 pt-4 sm:pt-8 mb-2 sm:mb-4">
-                    <a href="/" className="inline-block group">
+                    <a href="/" className="inline-block group" aria-label="Noweb Labs - Diseño de Páginas Web en Puerto Montt">
                         <Image
                             src="/logo.png"
-                            alt="Noweb Logo"
+                            alt="Noweb Labs - Agencia de Diseño de Páginas Web en Puerto Montt"
                             width={220}
                             height={70}
                             className="h-14 sm:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
@@ -162,7 +162,7 @@ const Hero = () => {
                         >
                             <Image
                                 src="/lap.png"
-                                alt="Diseño Web Laptop Preview"
+                                alt="Diseño y Desarrollo de Páginas Web en Puerto Montt - Noweb Labs"
                                 width={820}
                                 height={600}
                                 unoptimized
@@ -181,10 +181,10 @@ const Hero = () => {
             <div className="flex lg:hidden flex-col justify-start min-h-screen w-full relative bg-black px-4 pt-4 pb-6 overflow-hidden">
                 {/* Top Logo Header - Mobile (Slightly smaller & tighter padding) */}
                 <div className="w-full flex items-center justify-center relative z-20 pt-4 sm:pt-6 mb-1">
-                    <a href="/" className="inline-block">
+                    <a href="/" className="inline-block" aria-label="Noweb Labs - Páginas Web Puerto Montt">
                         <Image
                             src="/logo.png"
-                            alt="Noweb Logo"
+                            alt="Noweb Labs - Páginas Web y Tiendas Online Puerto Montt"
                             width={200}
                             height={65}
                             unoptimized
@@ -199,7 +199,7 @@ const Hero = () => {
                     {/* Background Image: movil.png */}
                     <Image
                         src="/movil.png"
-                        alt="Mobile Background"
+                        alt="Desarrollo Web Móvil y E-commerce en Puerto Montt"
                         fill
                         unoptimized
                         className="object-contain object-center z-0 pointer-events-none"

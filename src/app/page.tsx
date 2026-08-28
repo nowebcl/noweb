@@ -3,6 +3,7 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import WorkProcess from "@/components/WorkProcess";
 import TechnicalSection from "@/components/TechnicalSection";
 import PricingTable from "@/components/PricingTable";
+import LocalCoverageSection from "@/components/LocalCoverageSection";
 import ReviewsScroll from "@/components/ReviewsScroll";
 import FAQs from "@/components/FAQs";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <WorkProcess />
         <TechnicalSection />
         <PricingTable />
+        <LocalCoverageSection />
         <ReviewsScroll />
         <FAQs />
 

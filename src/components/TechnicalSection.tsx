@@ -50,12 +50,11 @@ const TechnicalSection = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="m-0 text-4xl md:text-5xl font-[1000] tracking-tight leading-[1.05] mb-8">
-                                SEO Local para tu Pyme en la <br />
+                                SEO Local & Desarrollo Web en la <br />
                                 <span className="nw-grad decoration-accent/30 underline-offset-8">Región de Los Lagos</span>
                             </h2>
                             <p className="m-0 text-white/70 text-lg mb-10 leading-[1.6] font-[650]">
-                                En Noweb Labs no solo diseñamos tu web, nos aseguramos de que sea una herramienta potente y segura.
-                                Optimizamos para **Puerto Montt** y **Puerto Varas** eliminando el peso innecesario.
+                                En Noweb Labs no solo diseñamos tu página web: implementamos estrategias de posicionamiento SEO en Google para que tu negocio en <strong>Puerto Montt</strong>, <strong>Puerto Varas</strong> y el sur de Chile destaque frente a la competencia y atraiga clientes reales todos los días.
                             </p>
 
                             <div className="grid gap-6">
